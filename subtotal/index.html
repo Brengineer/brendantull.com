@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="author" content="Brendan Tull">
+    <meta charset="utf-8">
+    <title>Subtotal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            text-align:center;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        h1, p, span {
+            margin:4% 0 0.5%;
+            font-weight:normal;
+        }
+        h1 {
+            color: #12a;
+        }
+        textarea {
+            width:280px;
+        }
+        #solve {
+            display: block;
+            margin: 3% auto;
+            line-height: 20px;
+            padding: 2px 10px;
+            font-size: 16px;
+            background: #fff;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+            color: #24c;
+            font-weight: bold;
+        }
+        #description {
+            text-decoration:underline;
+            margin-top:5%;
+        }
+        #answer {
+            display:block;
+            font-size:1.1em;
+            line-height:1.75em;
+            margin-top:0.25%;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Which subset equals a given subtotal?</h1>
+<form>
+    <p><label for="entries">Enter numbers</label></p>
+    <textarea rows="8" id="entries"></textarea>
+    <!-- <textarea rows="8" id="entries">131.8, 15.23, 519.2, 55, 4.66, 82, 509.05, 509.05, 34.87, 861.27, 79.33, 66.98, 24.98, 8.01, 13, 7.8, 4.46, 16.23, 25, 3.39</textarea> -->
+    <p><label for="target">Enter targeted subtotal:</label></p>
+    <input type="text" id="target">
+    <!-- <input type="text" id="target" value="669.24"> -->
+    <input type="submit" id="solve" value="Solve" />
+</form>
+<p id="description"></p>
+<span id="answer"></span>
+
+<script src="subtotal.js"></script>
+
+</body>
+</html>

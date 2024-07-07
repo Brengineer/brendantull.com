@@ -1,0 +1,230 @@
+/* ------------------------------------------------ */
+/* --- GLOBAL --- */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* --- TYPOGRAPHY --- */
+h1 {
+    margin: 0.5em 0 0;
+    font-size: 2.5em;
+    color: #005;
+}
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 2em;
+    }
+}
+p {
+    margin: 0.3em 0;
+    line-height: 1.4em;
+}
+ul {
+    margin: 0;
+    padding-left: 34px;
+    text-align: left;
+}
+li:not(:last-child) {
+    margin-bottom: 0.5em;
+}
+
+/* ------------------------------------------------ */
+/* --- TOP AREA --- */
+
+.top-controls {
+    margin: 1.2em 0;
+}
+#undo-button {
+    margin-right: 0;
+}
+#redo-button {
+    margin-left: 0;
+}
+
+#restart-button:before {
+    content: '\e901';
+}
+#undo-button:before {
+    content: '\e902';
+}
+#redo-button:before {
+    content: '\e903';
+}
+#options-button:before {
+    content: '\e900';
+}
+
+/* --- STATS --- */
+span.val {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #005;
+}
+span.val.above {
+    color: #e30;
+}
+
+/* ------------------------------------------------ */
+/* --- MENU --- */
+
+.quantity button {
+    margin: 0 0.25em;
+    vertical-align: middle;
+}
+#quantity-button-down:before {
+    content: '\e904';
+}
+#quantity-button-up:after {
+    content: '\e905';
+}
+
+#quantity-num {
+    vertical-align: middle;
+    height: 32px;
+    width: 51px;
+    padding-left: 8px;
+}
+
+#quantity-span {
+    display: block;
+    margin-top: 0.5em;
+    font-size: 14px;
+    color: #e30;
+}
+
+.option.clock,
+.option.target-moves {
+    margin-bottom: 1em;
+}
+
+/* --- COLOR BUTTONS --- */
+.color button {
+    margin: 0;
+    padding: 2px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-clip: content-box;
+}
+.color button:hover {
+    box-shadow: 0 0 2px 0 #38e;
+}
+.color button:active {
+    border-color: #38e;
+}
+.color button.active {
+    cursor: default;
+    box-shadow: none;
+    border-color: #38e;
+    opacity: 1;
+}
+#cb0 {
+    background-color: #27f;
+}
+#cb1 {
+    background-image: linear-gradient(135deg, #cdc 50%, #323 50%);
+}
+#cb2 {
+    background-image: linear-gradient(135deg, #f00 20%, #ff0 20%, #ff0 35%, #0f0 35%, #0f0 50%, #0ff 50%, #0ff 65%, #00f 65%, #00f 80%, #f0f 80%);
+}
+
+/* ------------------------------------------------ */
+/* --- GAME --- */
+
+#game-wrapper {
+    font-size: 30px;
+    width: 32em;
+    margin: 3.2em 0;
+}
+@media screen and (max-width: 1000px) {
+    #game-wrapper {
+        font-size: 3vw;
+    }
+}
+#post-wrapper {
+    display: flex;
+    justify-content: space-around;
+    height: 11em;
+}
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+}
+
+/* --- POLES, BASE --- */
+.post:before {
+    content: '';
+    width: 1em;
+    flex-grow: 1;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(128, 128, 128, 0), rgba(0, 0, 0, 0.3)), linear-gradient(rgba(255, 255, 255, 0.6), rgba(128, 128, 128, 0) 0.5em) #db5;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+}
+.post.hovered:before {
+    box-shadow: 0 0 0.5em 0.1em #ed5;
+}
+#base {
+    position: relative;
+    height: 1.4em;
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(128, 128, 128, 0) 20%, rgba(128, 128, 128, 0) 80%, rgba(0, 0, 0, 0.4)), linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(128, 128, 128, 0) 1%, rgba(128, 128, 128, 0) 99%, rgba(0, 0, 0, 0.3)) #630;
+    border-radius: 0.2em;
+}
+
+/* --- DISKS --- */
+.disk {
+    height: 1em;
+    border-radius: 0.5em;
+    background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(128, 128, 128, 0), rgba(0, 0, 0, 0.4)), linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(128, 128, 128, 0), rgba(0, 0, 0, 0.4)) #27f;
+    transition: 0.2s ease;
+    transition-property: top, left;
+}
+.disk.odd {
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(128, 128, 128, 0), rgba(0, 0, 0, 0.3)), linear-gradient(to right, rgba(255, 255, 255, 0.25), rgba(128, 128, 128, 0), rgba(0, 0, 0, 0.25)) #bcb;
+}
+.disk.even {
+    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(128, 128, 128, 0), rgba(0, 0, 0, 0.3)), linear-gradient(to right, rgba(255, 255, 255, 0.25), rgba(128, 128, 128, 0), rgba(0, 0, 0, 0.25)) #212;
+}
+.disk.selected {
+    box-shadow: 0 0 0.6em 0.1em #38e;
+}
+.disk.confirmed {
+    box-shadow: 0 0 0.6em 0.1em #0a2;
+}
+.disk.cancelled {
+    box-shadow: 0 0 0.6em 0.1em #e30;
+}
+/*.disk.glass {*/
+/*background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.6) 20%, rgba(0, 0, 0, 0.3) 80%, rgba(255, 255, 255, 0.1)), */
+/*linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(255, 255, 255, 0.3) 20%, rgba(255, 255, 255, 0.35) 25%, rgba(0, 0, 0, 0.15) 75%, rgba(0, 0, 0, 0.2) 80%, rgba(255, 255, 255, 0.05))*/
+/*rgba(34, 119, 255, 0.8);*/
+/*}*/
+/*.disk.follow {*/
+/*position: fixed;*/
+/*}*/
+
+/* ------------------------------------------------ */
+/* --- LINKS --- */
+
+.footer-links {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: flex;
+    margin: 0;
+    background: #eee;
+    border-radius: 8px 8px 0 0;
+}
+.footer-links button {
+    padding: 10px 14px;
+    line-height: 20px;
+}
+.footer-links button:not(:last-child) {
+    border-right: 2px solid #ccc;
+}

@@ -1,0 +1,157 @@
+/* Global */
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    padding: 3%;
+    text-align: center;
+    background-color: #abc;
+    font-family: sans-serif;
+}
+
+.outer {
+    border-radius: 16px;
+    overflow: hidden; /* to ensure that border-radius clips children */
+}
+
+h1 {
+    margin: 0;
+    padding: 16px 24px;
+    color: white;
+    font-size: 26px;
+    font-weight: 300;
+    background: #353539;
+}
+
+main {
+    background: #fff;
+    padding: 16px 16px 24px;
+}
+
+.hide {
+    display: none;
+}
+
+
+/* Table */
+
+table {
+    margin: 0 auto 24px;
+}
+
+td {
+    padding: 8px 12px;
+}
+
+td:first-child {
+    min-width: 55px;
+}
+
+td:nth-child(3) {
+    min-width: 38px;
+}
+
+td > span {
+    display: inline-block;
+}
+
+table.editable td:nth-child(3) {
+    display: none;
+}
+
+table:not(.editable) .actions {
+    display: none;
+}
+
+.actions {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.soon {
+    color: #b00;
+}
+
+.very-soon {
+    font-weight: bold;
+}
+
+
+/* Form */
+
+form section {
+    margin: 16px;
+}
+
+select, input {
+    background: inherit;
+    padding: 2px 7px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.invalid {
+    border: 2px solid #b00;
+}
+
+.help-text {
+    font-size: 15px;
+    color: #b00;
+    margin-top: 6px;
+}
+
+#confirm-pgf {
+    color: #0a2;
+}
+
+button {
+    font-size: 16px;
+    background: #ddd;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.cutButton {
+    border-radius: 50%;
+    font-size: 26px;
+    line-height: 24px;
+    padding: 0;
+    width: 24px;
+}
+
+.cutButton span {
+    display: inline-block;
+    line-height: 15px;
+    vertical-align: top;
+}
+
+
+/* Responsive */
+
+@media only screen and (max-width: 425px) {
+    .large {
+        display: none;
+    }
+
+    h1 {
+        padding: 12px;
+        font-size: 24px;
+    }
+
+    main {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    td {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}

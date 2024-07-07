@@ -1,0 +1,39 @@
+<!Doctype HTML>
+<html>
+<head>
+    <meta name="author" content="Brendan Tull">
+    <meta charset="utf-8">
+    <title>Monty-Hall Problem Simulator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<h2>Monty-Hall Problem simulation</h2>
+<form>
+    <p>
+        <label for="doors">Doors: </label>
+        <input id="doors" title="doors" type="text" value="3"/>
+    </p>
+    <p>
+        <label for="iterations">Iterations: </label>
+        <input id="iterations" title="iterations" type="text" value="10000000"/>
+    </p>
+    <p>
+        <input type="submit" id="run" value="Run" />
+    </p>
+</form>
+<p>Kept door: <span id="keeper">0</span> (<span id="keeper-percent">0</span>%)</p>
+<p>Switched: <span id="switcher">0</span> (<span id="switcher-percent">0</span>%)</p>
+<br />
+<h4>Same-door winners: <span id="keep-win">0</span> (<span id="keep-percent">0</span>%)</h4>
+<h4>Switched-door winners: <span id="switch-win">0</span> (<span id="switch-percent">0</span>%)</h4>
+
+<script src="monty-hall.js"></script>
+
+</body>
+</html>

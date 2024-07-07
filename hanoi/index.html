@@ -1,0 +1,126 @@
+<!Doctype HTML>
+<html>
+<head>
+    <meta name="author" content="Brendan Tull">
+    <meta charset="utf-8">
+    <title>Towers of Hanoi - Beta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="hanoi.css" />
+</head>
+
+<body>
+<h1>Towers of Hanoi β</h1>
+
+<div class="top-controls">
+    <button id="restart-button" class="no-text icon" title="Restart"><span class="label">Restart</span></button>
+    <button id="undo-button" class="no-text icon" title="Undo"><span class="label">Undo</span></button>
+    <button id="redo-button" class="no-text icon" title="Redo"><span class="label">Redo</span></button>
+    <button id="options-button" class="no-text icon" title="Options"><span class="label">Options</span></button>
+</div>
+
+<p id="clock-pgf">Time: <span id="clock-span" class="val">00:00</span></p>
+<p id="count-pgf">Moves: <span id="count-span" class="val"></span> / <span id="target-span" class="val">0</span></p>
+
+<!-- GAME AREA -->
+<div id="game-wrapper">
+    <div id="post-wrapper">
+        <div id="p0" class="post" data-index="0"></div>
+        <div id="p1" class="post" data-index="1"></div>
+        <div id="p2" class="post" data-index="2"></div>
+    </div>
+    <div id="base"></div>
+</div>
+
+<!-- FOOTER AREA -->
+<div class="footer-links">
+    <button id="save-button" class="link">Save</button>
+    <button class="link"><a href="https://en.wikipedia.org/wiki/Tower_of_Hanoi" target="_blank">About</a></button>
+    <button id="help-button" class="link">Help</button>
+</div>
+
+<!-- OPTIONS PANEL -->
+<div id="options-div" class="pane">
+    <section>
+        <div class="option quantity">
+            <p class="label">Disks:</p>
+            <div>
+                <button id="quantity-button-down" class="no-text icon round" type="button"></button>
+                <input id="quantity-num" type="number" inputmode="numeric" pattern="[0-9]*" title="Natural number &le; 100" />
+                <button id="quantity-button-up" class="no-text icon round" type="button"></button>
+            </div>
+            <span id="quantity-span" class="hide">Natural number &le; 100</span>
+        </div>
+        <div class="option color">
+            <p class="label">Color:</p>
+            <!-- ToDo: Use radio buttons instead -->
+            <button id="cb0" class="no-text"><span class="label">Solid</span></button>
+            <button id="cb1" class="no-text"><span class="label">Striped</span></button>
+            <button id="cb2" class="no-text"><span class="label">Rainbow</span></button>
+        </div>
+        <!--<div class="option animation">-->
+            <!--<label for="animation-select">Animation: </label>-->
+            <!--<select id="animation-select">-->
+                <!--<option value="0">None</option>-->
+                <!--<option value="1">Basic</option>-->
+                <!--<option value="2">Full</option>-->
+            <!--</select>-->
+        <!--</div>-->
+        <div class="option keys">
+            <label for="keys-select">Keys: </label>
+            <select id="keys-select">
+                <option value="0">Arrows [←↓→]</option>
+                <option value="1">Letters [ZXC]</option>
+                <option value="2">Numbers [123]</option>
+            </select>
+        </div>
+    </section>
+    <section>
+        <div class="option clock">
+            <input id="clock-checkbox" type="checkbox" />
+            <label for="clock-checkbox">Show clock</label>
+        </div>
+        <div class="option count-moves">
+            <input id="count-checkbox" type="checkbox" />
+            <label for="count-checkbox">Count moves</label>
+        </div>
+    </section>
+    <section>
+        <button id="done-button">Done</button>
+    </section>
+</div>
+
+<!-- HELP PANEL -->
+<div id="help-div" class="pane">
+    <section>
+        <p>Drag &amp; drop disks to move, or select &amp; place using key controls set in options panel.</p>
+    </section>
+    <section>
+        <ul>
+            <li>Restart: ⌘R, ⌃R</li>
+            <li>Undo: ⌘Z, ⌃Z<!--<br><small>(3-finger swipe left)</small>--></li>
+            <li>Redo: ⇧⌘Z, ⌃Y<!--<br><small>(3-finger swipe right)</small>--></li>
+            <li>Options: ⌘,</li>
+            <li>More disks: +</li>
+            <li>Fewer disks: -</li>
+            <li>Save: ⌘S, ⌃S</li>
+        </ul>
+    </section>
+    <section>
+        <button id="hint-button">Hint</button>
+        <button id="solve-button">Solve</button>
+    </section>
+</div>
+
+<div id="message-div" class="pane">
+    <p id="message-pgf">You won!</p>
+    <button id="message-button">OK</button>
+</div>
+
+<script src="var.js"></script>
+<script src="app.js"></script>
+<script src="setup.js"></script>
+<script src="control.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

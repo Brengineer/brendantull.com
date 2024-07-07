@@ -1,0 +1,178 @@
+/* ------------------------------------------------ */
+/* --- GLOBAL --- */
+
+@font-face {
+    font-family: iconFont;
+    src: url(fonts/hanoi-icons.woff);
+}
+
+.hide {
+    display: none !important;
+}
+
+/* --- LINKS & BUTTONS --- */
+
+a {
+    color: #06d;
+}
+a:hover {
+    opacity: 0.85;
+}
+a:not(:hover) {
+    text-decoration: none;
+}
+a:active {
+    color: #005;
+}
+
+button:not(.link) {
+    height: 36px;
+    margin: 0 0.2em;
+    padding: 0 10px;
+    border: 1px solid #38e;
+    border-radius: 6px;
+    background: #38e;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+button:hover {
+    cursor: pointer;
+    opacity: 0.85;
+}
+button:not(.link):focus,
+button:not(.link):hover {
+    outline: none;
+    box-shadow: 0 0 5px 0 #38e;
+}
+button:not(.link):active {
+    background-color: #fff;
+    color: #38e;
+}
+
+button.no-text {
+    width: 44px;
+    height: 38px;
+    padding: 0;
+}
+button.no-text .label {
+    position: absolute;
+    width: 0;
+    height: 0;
+    color: transparent;
+    text-indent: -9999px;
+}
+button.icon {
+    font-family: iconFont;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 33px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+button.round {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    line-height: 22px;
+    font-size: 16px;
+}
+
+button.link {
+    border: none;
+    background: transparent;
+    color: #06d;
+    font-size: 16px;
+}
+button.link:hover {
+    text-decoration: underline;
+    box-shadow: none;
+}
+button.link:active {
+    color: #005;
+}
+button.link:focus {
+    outline: none;
+}
+
+/* ------------------------------------------------ */
+/* --- PANELS --- */
+
+.pane:not(.show),
+.overlay:not(.show) {
+    display: none !important;
+}
+
+.pane {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 278px;
+    max-height: 95%;
+    overflow: auto;
+    border-radius: 10px;
+    padding: 0.5em 1em 0.25em;
+    box-sizing: border-box;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 0 20px 2px #333;
+    z-index: 2;
+}
+
+.pane section {
+    padding: 1em 0.5em;
+}
+.pane section:not(:first-child) {
+    border-top: 1px solid #ccc;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 32px;
+    font-size: 26px;
+    line-height: 32px;
+    cursor: pointer;
+}
+
+#message-div .close {
+    display: none;
+}
+#message-div p {
+    margin-top: 6px;
+}
+#message-div button {
+    margin: 8px 0 12px;
+}
+
+/* ------------------------------------------------ */
+/* --- MENU --- */
+
+.option:not(:last-child) {
+    margin-bottom: 1.25em;
+}
+select,
+input[type="number"] {
+    height: 28px;
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    box-sizing: border-box;
+    background: #fff;
+    font-size: 0.9em;
+}
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}

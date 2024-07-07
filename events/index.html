@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="author" content="Brendan Tull" />
+    <meta charset="utf-8" />
+    <title>Dates to remember</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="events.css" />
+    <link rel="stylesheet" href="backgrounds.css" />
+    <script src="data.js"></script>
+</head>
+
+<body>
+<div class="outer">
+    <h1>Upcoming events</h1>
+    <main>
+        <table id="list"></table>
+        <form id="add-form" class="hide">
+            <section>
+                <label for="type-select">Type of event:</label>
+                <select id="type-select">
+                    <option value="BD">Birthday</option>
+                    <option value="AN">Anniversary</option>
+                    <option value="EX">Other</option>
+                </select>
+            </section>
+            <section>
+                <label id="name1-label" for="name1-text">Name:</label>
+                <input id="name1-text" class="validate" type="text" />
+                <p id="name1-pgf" class="help-text hide">Please use a proper name</p>
+            </section>
+            <section id="name2-section" class="hide">
+                <label for="name2-text">Bride:</label>
+                <input id="name2-text" class="validate" type="text" />
+                <p id="name2-pgf" class="help-text hide">Please use a proper name</p>
+            </section>
+            <section>
+                <label for="date-text">Date:</label>
+                <input id="date-text" class="validate" type="text" placeholder="yyyy/mm/dd" />
+                <p id="date-pgf" class="help-text hide">yyyy/mm/dd</p>
+            </section>
+            <section>
+                <p id="confirm-pgf" class="help-text hide">Event added</p>
+                <button id="add-button" type="submit">Add event</button>
+            </section>
+            <section>
+                <button id="reset-button" type="button">Reset list</button>
+            </section>
+        </form>
+        <button id="show-form" type="button">Edit</button>
+        <button id="hide-form" type="button" class="hide">Done</button>
+    </main>
+</div>
+<script src="events.js"></script>
+</body>
+</html>

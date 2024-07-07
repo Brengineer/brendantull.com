@@ -1,0 +1,38 @@
+/* Birthdays */
+body.julia {
+    background-color: #f5f;
+}
+body.tony {
+    background-color: #aaa;
+}
+body.jess {
+    background-color: #f55;
+}
+body.brendan {
+    background-color: #55f;
+}
+body.greg {
+    background-color: #ff5;
+}
+body.heather {
+    background-color: #5f5;
+}
+body.monica {
+    background-color: #a5f;
+}
+body.rob {
+    background-color: #fa5;
+}
+
+/* Anniversaries */
+body.anv {
+    background-color: #faa;
+}
+
+/* Other events */
+body.valentine {
+    background-color: #faa;
+}
+body.christmas {
+    background-image: repeating-linear-gradient(-45deg, #0a0, #0a0 50px, #c00 50px, #c00 100px);
+}
