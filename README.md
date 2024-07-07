@@ -1,4 +1,4 @@
-# Assorted web-dev dablings
+# Assorted web-dev dabblings
 
 _by Brendan Tull_
 
