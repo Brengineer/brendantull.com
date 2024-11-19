@@ -196,11 +196,11 @@ eventTracker = {
                 til = Math.round(til / 30.4); // 30.4 = average days per month
 
                 if (til === 1) {
-                    til = '1 m<span class="large">on.</span>';
+                    til = '1 m<span class="large">o.</span>';
                 } else if (til === 12) {
-                    til = '1 y<span class="large">ear</span>';
+                    til = '1 y<span class="large">r.</span>';
                 } else {
-                    til += ' m<span class="large">ons.</span>';
+                    til += ' m<span class="large">os.</span>';
                 }
             }
             return til;
